@@ -88,3 +88,4 @@ itsdangerous==1.1.0
 jsonify==0.5
 MarkupSafe==1.1.1
 numpy==1.19.0
+gunicorn
