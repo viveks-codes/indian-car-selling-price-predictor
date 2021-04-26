@@ -4,33 +4,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">   
     <title>Document</title>
 </head>
 
 <body>
 
-    <div style="color:blue">
+    <div style="color:#FFFFFF">
         <form action="{{ url_for('predict')}}" method="post">
-            <h2>Predictive analysis</h2>
-            <h3>Year</h3>
-            <input id="first" name="Year" type="number ">
-            <h3>What is the Showroom Price?(In lakhs)</h3><br><input id="second" name="Present_Price" required="required">
-            <h3>How Many Kilometers Drived?</h3><input id="third" name="Kms_Driven" required="required">
-            <h3>How much owners previously had the car(0 or 1 or 3) ?</h3><br><input id="fourth" name="Owner" required="required">
-            <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
+            <header class="text-gray-600 body-font">
+                <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+                  <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-purple-500 rounded-full" viewBox="0 0 24 24">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="ml-3 text-xl">Indian Car Selling Price Predictor</span>
+                  </a>
+                  <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
+
+                    <br>
+                   
+                  </nav>
+                  
+                </div>
+              </header>
+              <h2 class="ml-1 text-xl"s>This Project Use Machine Learning to Predict the Selling Price</h2>
+            <br>
+              <h3>Year</h3>
+            <input placeholder="2013" id="first" name="Year" type="number ">
+            <br>
+            <br>
+            <h3>What is the Showroom Price?(In lakhs)</h3><input id="second" name="Present_Price" placeholder="10" required="required">
+            <br>
+            <br>
+            <h3>How Many Kilometers Drived?</h3><input id="third" placeholder="23000" name="Kms_Driven" required="required">
+            <br>
+            <br>
+            <h3>How much owners previously had the car(0 or 1 or 3) ?</h3><input id="fourth" placeholder="0 or 1 or 3" name="Owner" required="required">
+            <br>
+            <br>
+            <h3>What Is the Fuel type?</h3>
+            <select name="Fuel_Type_Petrol" id="fuel" required="required">
                 <option value="Petrol">Petrol</option>
                 <option value="Diesel">Diesel</option>
                 <option value="Diesel">CNG</option>
             </select>
-            <h3>Are you A Dealer or Individual</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+            <br>
+            <br>
+            <h3>Are you A Dealer or Individual</h3>
+            <select name="Seller_Type_Individual" id="resea" required="required">
                 <option value="Dealer">Dealer</option>
                 <option value="Individual">Individual</option>
             </select>
-            <h3>Transmission type</h3><br><select name="Transmission_Mannual" id="research" required="required">
+            <br>
+            <br>
+            <h3>Transmission type</h3>
+            <select name="Transmission_Mannual" id="research" required="required">
                 <option value="Mannual">Manual Car</option>
                 <option value="Automatic">Automatic Car</option>
-            </select>
-            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            </select><br>
+        <br>
+            <button class="inline-flex items-center bg-red-900 border-0 py-1 px-3 focus:outline-none hover:bg-red-200 rounded text-base mt-4 md:mt-0" type="submit ">Calculate the Selling Price
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            <br><br>
+            
+           
             <br>
 
 
@@ -43,14 +84,29 @@
         <br><br><h3>{{ prediction_text }}<h3>
     </div>
 
-
+    <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            
+          </a>
+          <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2021 Vivek patel —
+            <a href="https://www.instagram.com/vivek_codes/" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@vivek_codes</a>
+          </p>
+          <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+            <p class="mr-5 hover:text-gray-900">Made With ❤️ and ☕ by Vivek Patel.</p>
+          </span>
+        </div>
+      </footer>
 
 
     <style>
         body {
-            background-color: lightslategray;
+
             text-align: center;
-            padding: 0px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	        
         }
         
         #research {
@@ -66,7 +122,7 @@
             border-style: solid;
             font-family: cursive;
             text-align: center;
-            background-color: rgb(168, 131, 61);
+            background-color: #4c68d7;
             font-size: medium;
             position: absolute;
             width: 700px;
@@ -87,7 +143,7 @@
         }
         
         #fuel:hover {
-            background-color: coral;
+            background-color: #fbad50;
         }
         
         #research {
@@ -99,7 +155,7 @@
         }
         
         #research:hover {
-            background-color: coral;
+            background-color:#fbad50;
         }
         
         #resea {
@@ -111,11 +167,11 @@
         }
         
         #resea:hover {
-            background-color: coral;
+            background-color: #fbad50;
         }
         
         #sub {
-            width: 120px;
+            width: 150px;
             height: 43px;
             text-align: center;
             border-radius: 14px;
@@ -123,7 +179,7 @@
         }
         
         #sub:hover {
-            background-color: darkcyan;
+            background-color: #8a3ab9;
         }
         
         #first {
@@ -153,6 +209,17 @@
             font-size: 20px;
             text-align: center;
         }
+        
+        @keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
     </style>
 </body>
 
