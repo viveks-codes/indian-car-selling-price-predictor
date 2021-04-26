@@ -1,2 +1,2 @@
 # Car-Price-Prediction
-https://jkkjkjbyhuvtyctfxd.herokuapp.com/
+http://dealer-price-predictor.herokuapp.com/
