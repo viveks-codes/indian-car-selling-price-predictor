@@ -10,16 +10,15 @@
 
 <body>
 
-    <div style="color:#FFFFFF">
+    <div style="color:#000">
         <form action="{{ url_for('predict')}}" method="post">
             <header class="text-gray-600 body-font">
                 <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                   <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-purple-500 rounded-full" viewBox="0 0 24 24">
-                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-                    </svg>
+                   
                     <span class="ml-3 text-xl">Indian Car Selling Price Predictor</span>
                   </a>
+                  <h2 class="ml-1 text-xl"s>This Project Use Machine Learning to Predict the Selling Price</h2>
                   <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
 
                     <br>
@@ -28,43 +27,44 @@
                   
                 </div>
               </header>
-              <h2 class="ml-1 text-xl"s>This Project Use Machine Learning to Predict the Selling Price</h2>
+              
             <br>
-              <h3>Year</h3>
-            <input placeholder="2013" id="first" name="Year" type="number ">
-            <br>
-            <br>
-            <h3>What is the Showroom Price?(In lakhs)</h3><input id="second" name="Present_Price" placeholder="10" required="required">
+              <h3 style="color:#FFF">Year</h3>
+            <input required="required" placeholder="2013" id="first" name="Year" style=";background : linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);" type="number ">
             <br>
             <br>
-            <h3>How Many Kilometers Drived?</h3><input id="third" placeholder="23000" name="Kms_Driven" required="required">
+            <h3 style="color:#FFF">What is the Showroom Price?(In lakhs)</h3><input id="second" style="background : linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);" name="Present_Price" placeholder="10" required="required">
             <br>
             <br>
-            <h3>How much owners previously had the car(0 or 1 or 3) ?</h3><input id="fourth" placeholder="0 or 1 or 3" name="Owner" required="required">
+            <h3 style="color:#FFF">How Many Kilometers Drived?</h3><input style="background : linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);" id="third" placeholder="23000" name="Kms_Driven" required="required">
             <br>
             <br>
-            <h3>What Is the Fuel type?</h3>
-            <select name="Fuel_Type_Petrol" id="fuel" required="required">
+            <h3 style="color:#FFF">How much owners previously had the car(0 or 1 or 3) ?</h3><input style="background : linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);" id="fourth" placeholder="0 or 1 or 3" name="Owner" required="required">
+            <br>
+            <br>
+            <h3 style="color:#FFF">What Is the Fuel type?</h3>
+            <select style="background : linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);" name="Fuel_Type_Petrol" id="fuel" required="required">
                 <option value="Petrol">Petrol</option>
                 <option value="Diesel">Diesel</option>
                 <option value="Diesel">CNG</option>
             </select>
             <br>
             <br>
-            <h3>Are you A Dealer or Individual</h3>
-            <select name="Seller_Type_Individual" id="resea" required="required">
+            <h3 style="color:#FFF">Are you A Dealer or Individual</h3>
+            <select style="background : linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);border-color: black;" name="Seller_Type_Individual" id="resea" required="required">
                 <option value="Dealer">Dealer</option>
                 <option value="Individual">Individual</option>
             </select>
             <br>
+
             <br>
-            <h3>Transmission type</h3>
-            <select name="Transmission_Mannual" id="research" required="required">
+            <h3 style="color:#FFF">Transmission type</h3>
+            <select style="background : linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);" name="Transmission_Mannual" id="research" required="required">
                 <option value="Mannual">Manual Car</option>
                 <option value="Automatic">Automatic Car</option>
             </select><br>
         <br>
-            <button class="inline-flex items-center bg-red-900 border-0 py-1 px-3 focus:outline-none hover:bg-red-200 rounded text-base mt-4 md:mt-0" type="submit ">Calculate the Selling Price
+            <button class="inline-flex items-center bg-red-900 border-0 py-1 px-3 focus:outline-none hover:bg-white-200 rounded text-base mt-4 md:mt-0" type="submit ">Calculate the Selling Price
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
                   <path d="M5 12h14M12 5l7 7-7 7"></path>
                 </svg>
@@ -152,8 +152,19 @@
             text-align: center;
             border-radius: 14px;
             font-size: 18px;
-        }
-        
+        }.dropdown {
+  position: relative;
+  display: inline-block;
+}
+        .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #000;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px black;
+  padding: 12px 16px;
+  z-index: 1;
+}
         #research:hover {
             background-color:#fbad50;
         }
@@ -222,5 +233,4 @@
 	}
     </style>
 </body>
-
 </html>
